@@ -16,11 +16,9 @@ def WatchPage(itemURL, twilioNumber, textToNumber, driverPath, firefoxLocation, 
     outOfStock = True
     while outOfStock == True:
         driver.get(itemURL)
-        print("got url")
         if driver.find_elements_by_class_name(elementClassName):
             SendText(itemURL, twilioNumber, textToNumber, client)
             outOfStock = False
         else:
-            print("else")
             print(str(datetime.now()) + " Not in stock.")
             time.sleep(5)
