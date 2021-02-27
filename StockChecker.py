@@ -24,7 +24,9 @@ driverPath = r""
 firefoxLocation = Options()
 firefoxLocation.binary_location = r""
 
-#class name for add to cart button on www.microcenter.com is "STBTN". www.walmart.com uses "spin-button-children"
+#class name for add to cart button on www.microcenter.com is "STBTN". Some sites like Walmart use the same class name for
+#out of stock as add to cart. In this case you'll want to add a conditional to the StockWatch module to check the innerText property
+#using .get_property('innerText') method
 #right click > inspect element on the web page. Dig around until you find the right class name for the website.
 elementClassName = ""
 
